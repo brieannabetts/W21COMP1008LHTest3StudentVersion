@@ -64,6 +64,18 @@ public class Person {
     }
 
     public void setGender(String gender) {
+        gender = gender.toLowerCase();
+        if (gender.equals("f") || gender.equals("m") || gender.equals ("o")){
+            if (gender.equals("f")){
+                this.gender = "Female";
+            }
+            if (gender.equals("m")){
+                this.gender = "Male";
+            }
+            if (gender.equals("o")){
+                this.gender = "Other";
+            }
+        }
     }
   
     public void setEmail(String email) {
