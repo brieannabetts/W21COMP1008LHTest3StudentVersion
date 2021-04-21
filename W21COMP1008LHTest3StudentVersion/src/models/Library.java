@@ -5,9 +5,11 @@ package models;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 public class Library {
     private ArrayList<Book> books;
+    private Object HashSet;
 
     public Library() {
         this.books = new ArrayList<>();
@@ -20,7 +22,12 @@ public class Library {
 
     public ArrayList<Person> getAuthors()
     {
-        return new ArrayList<>();
+        HashSet hs = new HashSet();
+        hs.addAll(books);
+        books.clear();
+        books.addAll(hs);
+
+        return (ArrayList<Person>) HashSet;
     }
 
     public ArrayList<Book> getBooksByAuthor(Person author){
@@ -29,6 +36,8 @@ public class Library {
 
     public int getNumOfBooks()
     {
+        String numberOfBooks;
+        for books numOfBooks
         return -1;
     }
 
