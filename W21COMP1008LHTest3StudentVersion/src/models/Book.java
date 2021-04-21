@@ -41,6 +41,10 @@ public class Book {
     }
 
     public void setPrice(double price) {
+        if (price >= 0){
+            this.price=price;
+        }else
+            throw new IllegalArgumentException("The price must be greater than ot equal to 0");
     }
 
     public void checkOutBook(Person libraryPatron, LocalDate dueDate)
