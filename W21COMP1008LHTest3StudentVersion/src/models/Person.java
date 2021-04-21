@@ -34,9 +34,26 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
+        firstName = firstName.trim();
+        if (firstName.length() >= 2) {
+            firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
+                this.firstName = firstName;
+        }
+        else
+            throw new IllegalArgumentException("First name must have at least 2 characters");
+
     }
 
+
     public void setLastName(String lastName) {
+            lastName = lastName.trim();
+            if (lastName.length()>=2) {
+                lastName = lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
+                this.lastName = lastName;
+            }
+            else
+                throw new IllegalArgumentException("Last name must have at least 2 characters");
+
     }
 
     public void setBirthday(LocalDate birthday) {
