@@ -54,9 +54,13 @@ public class Library {
     }
 
 
-    public void checkOutBook(Book book, Person patron, LocalDate dueDate)
+    public void checkOutBook(Book books, Person patron, LocalDate dueDate)
     {
-
+        if (books.isAvailable()){
+            this.checkOutBook();
+        }else
+            throw new IllegalArgumentException("book is not available");
+        }
     }
 
 
