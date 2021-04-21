@@ -52,7 +52,7 @@ public class Book {
         if (dueDate.isAfter(LocalDate.now())){
             returnDate = dueDate;
         }
-
+        this.libraryPatron=libraryPatron;
     }
 
     public LocalDate getReturnDate() {
