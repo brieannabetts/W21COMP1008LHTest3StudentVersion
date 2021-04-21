@@ -67,7 +67,10 @@ public class Book {
 
     public boolean isAvailable()
     {
-        return false;
+        if (returnDate.isAfter(LocalDate.now())){
+            throw new IllegalArgumentException("this book is unavailible");
+
+        }
     }
 
 
