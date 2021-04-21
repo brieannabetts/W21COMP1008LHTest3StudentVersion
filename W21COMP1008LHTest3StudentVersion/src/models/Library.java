@@ -34,12 +34,18 @@ public class Library {
         return new ArrayList<>();
     }
 
-    public int getNumOfBooks()
-    {
-        String numberOfBooks;
-        for books numOfBooks
-        return -1;
+    public int getNumOfBooks() {
+        {
+            int numBooks = 0;
+            for (int i = 0; i < 100; i++) {
+                if (books.get(i).getAuthor(author)) {
+                    numBooks++;
+                }
+            }
+            return getNumOfBooks();
+        }
     }
+    
 
     public double getValueOfBooks()
     {
