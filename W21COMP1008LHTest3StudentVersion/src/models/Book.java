@@ -64,6 +64,6 @@ public class Book {
 
     public String toString()
     {
-        return null;
+       return (title + " "+ author + " is due back by " + returnDate);
     }
 }
