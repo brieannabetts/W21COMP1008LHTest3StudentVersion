@@ -19,6 +19,13 @@ public class Book {
     }
 
     public void setTitle(String bookName) {
+        bookName= bookName.trim();
+        if (bookName.length() >= 2) {
+            bookName = bookName.substring(0, 1).toUpperCase() + bookName.substring(1);
+            this.title = bookName;
+        }
+        else
+            throw new IllegalArgumentException("The book title must have at least 2 characters");
     }
 
     public Person getAuthor() {
