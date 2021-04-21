@@ -49,12 +49,21 @@ public class Book {
 
     public void checkOutBook(Person libraryPatron, LocalDate dueDate)
     {
+        if (dueDate.isAfter(LocalDate.now())){
+            returnDate = dueDate;
+        }
+
     }
 
-    public LocalDate getReturnDate()
-    {
+    public LocalDate getReturnDate() {
+        if (returnDate.isAfter(LocalDate.now())) {
+            this.returnDate = returnDate;
+        } else {
+            throw new IllegalArgumentException("the return date must be in the future");
+        }
         return returnDate;
     }
+
 
     public boolean isAvailable()
     {
