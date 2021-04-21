@@ -31,19 +31,16 @@ public class Library {
     }
 
     public ArrayList<Book> getBooksByAuthor(Person author){
+        int numBooks = 0;
+        for (int i = 0; i < 100; i++) {
+            if (books.get(i).getAuthor(author)) {
+                numBooks++;
+            }
+        }
         return new ArrayList<>();
     }
 
     public int getNumOfBooks() {
-        {
-            int numBooks = 0;
-            for (int i = 0; i < 100; i++) {
-                if (books.get(i).getAuthor(author)) {
-                    numBooks++;
-                }
-            }
-            return getNumOfBooks();
-        }
     }
     
 
