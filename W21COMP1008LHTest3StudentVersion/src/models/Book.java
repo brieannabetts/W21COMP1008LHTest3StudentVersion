@@ -71,6 +71,7 @@ public class Book {
             throw new IllegalArgumentException("this book is unavailible");
 
         }
+        return isAvailable();
     }
 
 
