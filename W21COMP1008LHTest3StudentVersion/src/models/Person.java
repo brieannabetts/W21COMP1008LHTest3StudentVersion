@@ -89,6 +89,6 @@ public class Person {
     @Override
     public String toString()
     {
-        return null;
+        return String.format(firstName + " " + lastName);
     }
 }
