@@ -67,11 +67,18 @@ public class Person {
     }
   
     public void setEmail(String email) {
+        if (email == null){
+            throw new IllegalArgumentException("Must Enter email");
+        }else{
+            this.email = email;
+        }
+
     }
 
     public String getInitials()
     {
-        return null;
+        String initials = firstName.substring(0,1)+ "." +lastName.substring(0,1);
+        return initials;
     }
 
     public int getAge()
