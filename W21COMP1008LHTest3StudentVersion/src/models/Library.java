@@ -5,7 +5,6 @@ package models;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 
 public class Library {
     private ArrayList<Book> books;
@@ -41,17 +40,25 @@ public class Library {
     }
 
     public int getNumOfBooks() {
-    }
+        return books.size();
     
 
-    public double getValueOfBooks()
-    {
-        return -1;
+    public double getValueOfBooks() {
+        double valueOfBooks = 0;
+        if (books.size()>0){
+            for (Book category : books){
+    valueOfBooks += category.getPrice();
+        }
     }
+        return (int) valueOfBooks;
+    }
+
 
     public void checkOutBook(Book book, Person patron, LocalDate dueDate)
     {
+
     }
+
 
     public ArrayList<Book> getCheckedOutBooks()
     {
