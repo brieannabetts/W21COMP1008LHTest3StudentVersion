@@ -4,6 +4,7 @@ package models;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Locale;
 
 public class Person {
     private String firstName, lastName, email;
@@ -57,6 +58,9 @@ public class Person {
     }
 
     public void setBirthday(LocalDate birthday) {
+        if (birthday.isAfter(LocalDate.now()))
+            throw new IllegalArgumentException("Birthday cannot be in the future");
+        this.birthday = birthday;
     }
 
     public void setGender(String gender) {
@@ -72,7 +76,7 @@ public class Person {
 
     public int getAge()
     {
-        return -1;
+        return Period.between(birthday, LocalDate.now()).getYears();
     }
     
     @Override
